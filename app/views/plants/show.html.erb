@@ -1,0 +1,6 @@
+<h1><%= @plant.common_name %></h1>
+
+<h3><i><%= @plant.genus_species %></i></h3>
+
+<%= link_to 'Edit', edit_plant_path(@plant) %>
+<%= link_to 'Delete', plant_path(@plant), method: :delete %>

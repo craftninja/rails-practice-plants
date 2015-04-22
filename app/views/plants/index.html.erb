@@ -1,0 +1,24 @@
+<h1>Plants</h1>
+<%= link_to 'New Plant', new_plant_path %>
+<table>
+  <thead>
+    <th>
+      Common Name
+    </th>
+    <th>
+      Genus species
+    </th>
+  </thead>
+  <tbody>
+    <% @plants.all.each do |plant| %>
+    <tr>
+      <td>
+        <%= link_to plant.common_name, plant_path(plant) %>
+      </td>
+      <td>
+        <i><%= plant.genus_species %></i>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

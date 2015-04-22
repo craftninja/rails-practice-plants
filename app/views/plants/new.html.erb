@@ -1,0 +1,11 @@
+<h1>New Plant</h1>
+
+<%= form_for @plant do |f| %>
+  <%= f.label :common_name %>
+  <%= f.text_field :common_name %>
+
+  <%= f.label :genus_species %>
+  <%= f.text_field :genus_species %>
+
+  <%= f.submit 'Create' %>
+<% end %>
