@@ -1,6 +1,11 @@
-<h1>Plants</h1>
-<%= link_to 'New Plant', new_plant_path %>
-<table>
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'New Plant', new_plant_path, class: "btn btn-success" %>
+  </div>
+  <h1>Plants</h1>
+</div>
+
+<table class="table">
   <thead>
     <th>
       Common Name
