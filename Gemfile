@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.2.1'
+  gem 'capybara', '~> 2.4.4'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
 end
