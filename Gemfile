@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'rspec-rails', '~> 3.2.1'
   gem 'capybara', '~> 2.4.4'
+  gem 'student_challenges_formatter', git: "git@github.com:gSchool/student-challenges-formatter-gem.git", branch: "rails-formatter"
   gem 'byebug'
   gem 'web-console', '~> 2.0'
 end
