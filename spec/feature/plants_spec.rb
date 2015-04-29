@@ -32,4 +32,13 @@ feature 'Plants' do
     expect(page).to have_content("Genus species can't be blank")
   end
 
+  scenario 'User must enter two words for genus species' do
+    visit plants_path
+    click_on 'New Plant'
+    fill_in 'Common name', with: 'Nettles'
+    fill_in 'Genus species', with: 'Urtica'
+    click_on 'I collected that'
+    expect(page).to have_content("Genus species should have at least one space (separating the genus and species)")
+  end
+
 end
