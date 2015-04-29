@@ -57,6 +57,7 @@ Some pre-questions:
 1. Have the button on the forms say either "I collected that!" OR "Oops, this is what I meant" for the new and edit forms respectively.
 1. Add validations to ensure presence of both common name and genus species.
   * Add a test, follow the errors to complete adding validation and rendering.
+  * Error messages should be in a div with class `alert alert-danger`.
 1. Imagine a world in which you have many other resources. Pull the error rendering into a partial that could be shared between resource views.
 1. Add custom validations for genus species.
   * "Genus species should have at least one space (separating the genus and species)"
