@@ -23,4 +23,13 @@ feature 'Plants' do
     click_on 'Delete'
     expect(page).to_not have_content('Stinging Nettle')
   end
+
+  scenario 'User must enter common name, genus species' do
+    visit plants_path
+    click_on 'New Plant'
+    click_on 'I collected that'
+    expect(page).to have_content("Common name can't be blank")
+    expect(page).to have_content("Genus species can't be blank")
+  end
+
 end
