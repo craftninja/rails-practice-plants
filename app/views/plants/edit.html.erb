@@ -1,21 +1,3 @@
 <h1 class=page-header>Edit Plant</h1>
 
-<%= form_for @plant, html: {class: "form-horizontal"} do |f| %>
-  <div class="form-group">
-    <%= f.label :common_name, class: 'col-md-2 control-label' %>
-    <div class='col-md-6'>
-      <%= f.text_field :common_name, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :genus_species, class: 'col-md-2 control-label' %>
-    <div class='col-md-6'>
-      <%= f.text_field :genus_species, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-      <%= f.submit 'Update', class: 'btn btn-success' %>
-    </div>
-  </div>
-<% end %>
+<%= render partial: 'form', locals: {button: 'Oops, this is what I meant'} %>
