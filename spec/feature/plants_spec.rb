@@ -6,7 +6,7 @@ feature 'Plants' do
     click_on 'New Plant'
     fill_in 'Common name', with: 'Nettles'
     fill_in 'Genus species', with: 'Urtica diotica'
-    click_on 'Create'
+    click_on 'I collected that'
     expect(current_path).to eq(plants_path)
     expect(page).to have_content('Nettles')
     expect(page).to have_content('Urtica diotica')
@@ -16,7 +16,7 @@ feature 'Plants' do
     expect(page).to have_content('Urtica diotica')
     click_on 'Edit'
     fill_in 'Common name', with: 'Stinging Nettle'
-    click_on 'Update'
+    click_on 'Oops, this is what I meant'
     expect(current_path).to eq(plant_path(Plant.find_by(common_name: 'Stinging Nettle')))
     expect(page).to_not have_content('Nettles')
     expect(page).to have_content('Stinging Nettle')
