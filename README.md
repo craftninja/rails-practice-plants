@@ -62,3 +62,18 @@ Some pre-questions:
 1. Add custom validations for genus species.
   * "Genus species should have at least one space (separating the genus and species)"
   * BONUS: if the common name is present and the genus species is missing, the error message should say "Would you like to look up the genus species of (common name) on Wikipedia?" with (common name) substituted for what was entered in the common name field, and substituted for dandylion in this link: `http://en.wikipedia.org/wiki/Special:Search?search=dandylion&go=Go`. Hint - how do you allow for spaces in the common name?
+
+### 3. Nesting and Active Record Associations
+
+1. Run RSpec to ensure all is well
+1. Un-pend the spec in Recipes
+1. Get all the tests to pass
+1. Once your app is finished, `rake db:seed`
+1. Open Rails console
+1. In console, query to find all the recipes for Yarrow
+1. In console, query to find all the culinary recipes
+1. In console, query to find all the Yarrow medicinal recipes
+
+BONUS: Create a spec and feature for:
+* Visit `/recipes` and create a new recipe on this page, but this time choose a pre-existing plant for a drop-down (collection select)
+* Creation will direct you back to the /recipes to create a new recipe again (for mass addition of recipes)
