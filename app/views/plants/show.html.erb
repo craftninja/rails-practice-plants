@@ -1,5 +1,6 @@
 <div class="page-header">
   <div class="pull-right">
+    <%= link_to 'Create Recipe', new_plant_recipe_path(@plant), class: 'btn btn-warning' %>
     <%= link_to 'Edit', edit_plant_path(@plant), class: 'btn btn-success' %>
     <%= link_to 'Delete', plant_path(@plant), method: :delete, class: 'btn btn-danger' %>
   </div>
@@ -7,3 +8,34 @@
 </div>
 
 <h3><i><%= @plant.genus_species %></i></h3>
+
+<h4 class="page-header">Recipes</h4>
+
+<table class='table'>
+  <thead>
+    <th>
+      Recipe Name
+    </th>
+    <th>
+      Plant part used
+    </th>
+    <th>
+      Recipe Purpose
+    </th>
+  </thead>
+  <tbody>
+    <% @plant.recipes.each do |recipe| %>
+      <tr>
+        <td>
+          <%= link_to recipe.name, plant_recipe_path(@plant, recipe) %>
+        </td>
+        <td>
+          <%= recipe.part %>
+        </td>
+        <td>
+          <%= recipe.purpose %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

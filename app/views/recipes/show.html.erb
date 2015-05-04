@@ -1,0 +1,28 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Edit', edit_plant_recipe_path(@plant, @recipe), class: 'btn btn-success' %>
+    <%= link_to 'Delete', plant_recipe_path(@plant, @recipe), method: :delete, class: 'btn btn-danger' %>
+  </div>
+  <h1><%= @recipe.name %></h1>
+</div>
+
+<h3>For <i><%= @plant.genus_species %></i>, commonly known as <%= @plant.common_name %></h3>
+
+<h4 class="page-header">Recipe</h4>
+
+<dl class="dl-horizontal">
+  <dt>Recipe Name</dt>
+  <dd><%= @recipe.name %></dd>
+  <dt>Plant Part</dt>
+  <dd><%= @recipe.part %></dd>
+  <dt>Purpose</dt>
+  <dd><%= @recipe.purpose.capitalize %></dd>
+  <dt>Ingredients</dt>
+  <dd><%= @recipe.ingredients%></dd>
+  <dt>Prep Time</dt>
+  <dd><%= @recipe.prep_time %></dd>
+  <dt>Total Time</dt>
+  <dd><%= @recipe.total_time%></dd>
+  <dt>Directions</dt>
+  <dd><%= @recipe.directions%></dd>
+</dl>
