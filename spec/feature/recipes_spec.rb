@@ -37,4 +37,25 @@ feature 'Recipes' do
     expect(current_path).to eq(plant_path(plant))
     expect(page).to_not have_content('Fried Dandylion Flowers')
   end
+
+  scenario 'User can add recipes at /recipes' do
+    plant = create_plant(
+      :common_name   => 'Dandylion',
+      :genus_species => 'Taraxacum officianale',
+    )
+    visit recipes_path
+    select 'Dandylion', from: :recipe_plant_id
+    fill_in 'Recipe Name', with: 'Fried Dandylion Flowers'
+    fill_in 'Part', with: 'Flowers'
+    select 'Culinary', from: :recipe_purpose # Select box should contain 'Culinary', 'Medicinal', 'Utilitarian'
+    fill_in 'Ingredients', with: 'flour, salt, and pepper'
+    fill_in 'Prep Time', with: '20 minutes'
+    fill_in 'Total Time', with: '25 minutes'
+    fill_in 'Directions', with: 'Your flowers should be collected with no stem.'
+    click_on 'That is how you make it'
+    expect(current_path).to eq(recipe_path)
+    visit plant_path(plant)
+    expect(page).to have_content('Fried Dandylion Flowers')
+  end
+
 end

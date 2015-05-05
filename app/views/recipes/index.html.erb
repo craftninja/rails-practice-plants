@@ -1,0 +1,57 @@
+<h1 class=page-header>Add Recipe</h1>
+
+<%= form_for @recipe, html: {class: "form-horizontal"} do |f| %>
+  <div class="form-group">
+    <%= f.label :plant, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.collection_select :plant_id, Plant.all, :id, :common_name, {}, {class: 'form-control'}  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, 'Recipe Name', class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :part, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_field :part, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :purpose, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.select(:purpose, [['Culinary', :culinary], ['Medicinal', :medicinal], ['Utilitarian', :utilitarian], ['Magical', :magical]], {}, {class: 'form-control'})  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ingredients, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_field :ingredients, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :prep_time, 'Prep Time', class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_field :prep_time, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_time, 'Total Time',  class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_field :total_time, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :directions, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_area :directions, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <%= f.submit 'That is how you make it', class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

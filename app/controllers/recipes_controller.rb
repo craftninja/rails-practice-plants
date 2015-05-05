@@ -1,6 +1,19 @@
 class RecipesController < ApplicationController
-  before_action :find_plant
+  before_action :find_plant, except: [:index, :indexcreate]
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @recipe = Recipe.new
+  end
+
+  def indexcreate
+    @recipe = Recipe.new(index_plant_params)
+    if @recipe.save
+      redirect_to recipe_path
+    else
+      render :index
+    end
+  end
 
   def new
     @recipe = Recipe.new
@@ -54,5 +67,18 @@ class RecipesController < ApplicationController
       :total_time,
       :directions
     ).merge(:plant_id => @plant.id)
+  end
+
+  def index_plant_params
+    params.require(:recipe).permit(
+      :name,
+      :part,
+      :purpose,
+      :ingredients,
+      :prep_time,
+      :total_time,
+      :directions,
+      :plant_id
+    )
   end
 end
