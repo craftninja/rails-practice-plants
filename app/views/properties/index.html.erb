@@ -1,0 +1,29 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'New Property', new_property_path, class: "btn btn-success" %>
+  </div>
+  <h1>Properties</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <th>
+      Property Name
+    </th>
+    <th>
+      Property Description
+    </th>
+  </thead>
+  <tbody>
+    <% @properties.each do |property| %>
+    <tr>
+      <td>
+        <%= link_to property.name, property_path(property) %>
+      </td>
+      <td>
+        <%= property.description %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

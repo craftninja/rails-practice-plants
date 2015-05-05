@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Properties' do
   scenario 'User can CRUD properties' do
-    pending 'This spec goes with Nesting and Active Record Associations (many to many, README #4)'
+    # pending 'This spec goes with Nesting and Active Record Associations (many to many, README #4)'
     visit '/'
     within '.navbar' do
       click_on 'Properties'
