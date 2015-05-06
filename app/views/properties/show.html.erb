@@ -7,3 +7,26 @@
 </div>
 
 <h3><%= @property.description %></h3>
+
+<table class="table">
+  <thead>
+    <th>
+      Plant name
+    </th>
+    <th>
+      Genus Species
+    </th>
+  </thead>
+  <tbody>
+    <% @property.plants.each do |plant| %>
+      <tr>
+        <td>
+          <%= link_to plant.common_name, plant_path(plant) %>
+        </td>
+        <td>
+          <i><%= plant.genus_species %></i>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,9 +1,17 @@
 <div class="page-header">
   <div class="pull-right">
+    <%= link_to 'View Characteristics', plant_characteristics_path(@plant), class: 'btn btn-warning' %>
     <%= link_to 'Edit', edit_plant_path(@plant), class: 'btn btn-success' %>
     <%= link_to 'Delete', plant_path(@plant), method: :delete, class: 'btn btn-danger' %>
   </div>
   <h1><%= @plant.common_name %></h1>
 </div>
 
-<h3><i><%= @plant.genus_species %></i></h3>
+<div class="page-header">
+  <div class="pull-right">
+    <% @plant.properties.each do |property| %>
+      <%= link_to property.name, property_path(property) %>
+    <% end %>
+  </div>
+  <h3><i><%= @plant.genus_species %></i></h3>
+</div>

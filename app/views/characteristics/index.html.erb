@@ -1,0 +1,41 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Add characteristic', new_plant_characteristic_path(@plant), class: "btn btn-success" %>
+  </div>
+  <h1>Characteristics for <%= @plant.common_name %></h1>
+</div>
+
+<table class="table">
+  <thead>
+    <th>
+      Property
+    </th>
+    <th>
+      Plant part
+    </th>
+    <th>
+      Preparation
+    </th>
+    <th>
+
+    </th>
+  </thead>
+  <tbody>
+    <% @characteristics.each do |characteristic| %>
+    <tr>
+      <td>
+        <%= link_to characteristic.property.name, property_path(characteristic.property) %>
+      </td>
+      <td>
+        <%= characteristic.part %>
+      </td>
+      <td>
+        <%= characteristic.preparation %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_plant_characteristic_path(@plant, characteristic) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

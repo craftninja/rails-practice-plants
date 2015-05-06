@@ -1,0 +1,27 @@
+<h1 class=page-header>New <%= @plant.common_name %> Characteristic</h1>
+
+<%= form_for [@plant, @characteristic], html: {class: "form-horizontal"} do |f| %>
+  <div class="form-group">
+    <%= f.label :property, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.collection_select(:property_id, Property.all, :id, :name, {}, {class: 'form-control'})  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :part, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_field :part, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :preparation, class: 'col-md-2 control-label' %>
+    <div class='col-md-6'>
+      <%= f.text_field :preparation, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <%= f.submit 'Create', class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

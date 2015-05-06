@@ -31,7 +31,7 @@ feature 'Properties' do
   end
 
   scenario 'User can add properties to plants (through characteristics)' do
-    pending 'This spec goes with Nesting and Active Record Associations (many to many, README #4)'
+    # pending 'This spec goes with Nesting and Active Record Associations (many to many, README #4)'
     plant = create_plant(
       :common_name => 'Yarrow',
       :genus_species => 'Achillea millefolium'
